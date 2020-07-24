@@ -46,10 +46,10 @@
                       </el-tooltip>
                   </template>
               </el-table-column>
-            </el-table>
+          </el-table>
 
             <!-- 分页区域 -->
-             <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="queryInfo.pagenum" :page-sizes="[1, 2, 5, 10]" :page-size="queryInfo.pagesize" layout="total, sizes, prev, pager, next, jumper" :total="total">
+            <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="queryInfo.pagenum" :page-sizes="[1, 2, 5, 10]" :page-size="queryInfo.pagesize" layout="total, sizes, prev, pager, next, jumper" :total="total">
             </el-pagination>
 
             <!-- 添加用户的对话框 -->
@@ -295,8 +295,8 @@ export default {
         type: 'warning'
       }).catch(err => err)
 
-      // 如果用户确认删除， 则返回字符串 confirm
-      // 如果用户确认删除， 则返回字符串 cancel
+      // 如果用户确认删除，则返回字符串 confirm
+      // 如果用户取消删除，则返回字符串 cancel
       if (confirmResult !== 'confirm') {
         return this.$message.info('已取消删除')
       }
